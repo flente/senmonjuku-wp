@@ -295,7 +295,7 @@ body {
   color: #FFFFFF;
 }
 .e_heading._pink {
-  color: #D5546A !important;
+  color: #D5546A;
 }
 .e_heading._line {
   position: relative;
@@ -335,7 +335,7 @@ body {
   color: #FFFFFF;
 }
 .e_heading_message._pink {
-  color: #D5546A !important;
+  color: #D5546A;
 }
 
 /* e_heading */
@@ -429,6 +429,10 @@ body {
 }
 .e_button._pink a, .e_button._pink span {
   background-color: #D5546A;
+  color: #FFFFFF;
+}
+.e_button._blue a, .e_button._blue span {
+  background-color: #54BED6;
   color: #FFFFFF;
 }
 .e_button._wide a, .e_button._wide span {

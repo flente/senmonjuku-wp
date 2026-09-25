@@ -169,13 +169,7 @@
                         <?php endwhile; ?>
                     </div>
                     <?php endif; wp_reset_postdata(); ?>
-                    <?php
-                        // 【仮】教室内の様子(写真+キャプション)はACFフィールド未追加のため、プレースホルダーで表示。
-                        // フィールド追加後、have_rows()等で置き換える。
-                        $gallery_placeholder_image = has_post_thumbnail()
-                            ? get_the_post_thumbnail_url()
-                            : get_template_directory_uri() . '/assets/image/school/school_no-image.png';
-                    ?>
+                    <?php if (have_rows('school_gallery')): ?>
                     <div class="p_school_gallery mb5">
                         <div class="e_heading-wrap mb2">
                             <h2 class="e_heading _pink _subpage">
@@ -184,29 +178,24 @@
                             </h2>
                         </div>
                         <ul class="p_school_gallery_list">
+                            <?php while (have_rows('school_gallery')): the_row(); ?>
                             <li class="p_school_gallery_item">
-                                <div class="p_school_gallery_image"><img src="<?php echo esc_url($gallery_placeholder_image); ?>" alt=""></div>
-                                <p class="p_school_gallery_title">自習スペース</p>
-                                <p class="p_school_gallery_text">集中できる個別ブースを完備。静かな環境で、いつでも自習に取り組めます。</p>
+                                <?php if (get_sub_field('gallery_image')): ?>
+                                <div class="p_school_gallery_image"><img src="<?php echo esc_url(get_sub_field('gallery_image')); ?>" alt="<?php echo esc_attr(get_sub_field('gallery_title')); ?>"></div>
+                                <?php endif; ?>
+                                <?php if (get_sub_field('gallery_title')): ?>
+                                <p class="p_school_gallery_title"><?php echo esc_html(get_sub_field('gallery_title')); ?></p>
+                                <?php endif; ?>
+                                <?php if (get_sub_field('gallery_text')): ?>
+                                <p class="p_school_gallery_text"><?php echo esc_html(get_sub_field('gallery_text')); ?></p>
+                                <?php endif; ?>
                             </li>
-                            <li class="p_school_gallery_item">
-                                <div class="p_school_gallery_image"><img src="<?php echo esc_url($gallery_placeholder_image); ?>" alt=""></div>
-                                <p class="p_school_gallery_title">授業の様子</p>
-                                <p class="p_school_gallery_text">講師が隣に寄り添い、対話を大切にした1対1の授業で理解を深めます。</p>
-                            </li>
-                            <li class="p_school_gallery_item">
-                                <div class="p_school_gallery_image"><img src="<?php echo esc_url($gallery_placeholder_image); ?>" alt=""></div>
-                                <p class="p_school_gallery_title">教室内</p>
-                                <p class="p_school_gallery_text">明るく清潔感のある教室で、気持ちよく学習に取り組めます。</p>
-                            </li>
-                            <li class="p_school_gallery_item">
-                                <div class="p_school_gallery_image"><img src="<?php echo esc_url($gallery_placeholder_image); ?>" alt=""></div>
-                                <p class="p_school_gallery_title">学習環境・教材</p>
-                                <p class="p_school_gallery_text">最新の教材や過去問、定期テスト対策プリントなどを豊富に用意しています。</p>
-                            </li>
+                            <?php endwhile; ?>
                         </ul>
                     </div>
+                    <?php endif; ?>
                     <script>
+
                     document.querySelectorAll('.p_school_teacherCard[data-micromodal-trigger]').forEach(function(el){
                       el.addEventListener('click', function(){
                         MicroModal.show(el.getAttribute('data-micromodal-trigger'), {

@@ -115,25 +115,22 @@ Template Name: HOME(2026 Preview)
               <span class="p_message_stats_icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
               </span>
-              <p class="p_message_stats_label">指導実績</p>
-              <p class="p_message_stats_number"><span>25</span>年</p>
-              <p class="p_message_stats_note">地域で積み重ねた実績</p>
+              <p class="p_message_stats_number"><span>25</span>年以上</p>
+              <p class="p_message_stats_note">地域に根ざした学習指導</p>
             </li>
             <li class="p_message_stats_item">
               <span class="p_message_stats_icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 8-4 8 4"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg>
               </span>
-              <p class="p_message_stats_label">卒業生</p>
-              <p class="p_message_stats_number"><span>2,350</span>名</p>
-              <p class="p_message_stats_note">多くの生徒が志望校へ</p>
+              <p class="p_message_stats_number"><span>14</span>校</p>
+              <p class="p_message_stats_note">愛知・岐阜エリアで展開中</p>
             </li>
             <li class="p_message_stats_item">
               <span class="p_message_stats_icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
               </span>
-              <p class="p_message_stats_label">成績アップ率</p>
-              <p class="p_message_stats_number"><span>92</span>%</p>
-              <p class="p_message_stats_note">成績向上を実現！</p>
+              <p class="p_message_stats_number">合格率<span>92</span>%</p>
+              <p class="p_message_stats_note">昨年度の合格実績</p>
             </li>
           </ul>
           <div class="p_message_media">
@@ -201,168 +198,137 @@ Template Name: HOME(2026 Preview)
             <span class="e_heading_jp">コース紹介</span>
           </h2>
         </div>
-        <h3 class="e_heading_message">学年に合わせて<br>楽しく学べるカリキュラムを<br>ご用意しています。</h3>
-        <div class="p_courseTab">
-          <div class="p_courseTabButton flex">
-            <button class="p_courseTabButton_item _school _active js-tabButton">中学生コース</button>
-            <button class="p_courseTabButton_item _schoolchild js-tabButton">小学生コース</button>
-          </div>
-          <div class="p_courseTabContent-wrap">
-            <div class="p_courseTabContent js-tabContent _show _pink">
-              <div class="p_courseTabContent_image">
+        <div class="p_courseCards">
+
+          <!-- 中学生コース -->
+          <div class="p_courseCard _pink">
+            <div class="p_courseCard_header">
+              <div class="p_courseCard_heroImage">
                 <picture>
                   <source srcset="<?php echo $imgUri; ?>/home/course_school.webp" type="image/webp">
-                  <img src="<?php echo $imgUri; ?>/home/course_school.jpg">
+                  <img src="<?php echo $imgUri; ?>/home/course_school.jpg" alt="中学生コース">
                 </picture>
               </div>
-              <div class="p_courseTabContent_text">
-                <h4>中学生コース</h4>
-                <dl class="p_courseTabContent_list">
-                  <div class="p_courseTabContent_list_item">
-                    <dt><span class="p_courseTabContent_list_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>対象者</dt>
-                    <dd>定期テストで伸び悩む中学生<br>勉強のやり方が分からない生徒</dd>
-                  </div>
-                  <div class="p_courseTabContent_list_item">
-                    <dt><span class="p_courseTabContent_list_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></span>指導形態</dt>
-                    <dd>1対1・1対2の個別指導<br>対面中心・オンライン対応可</dd>
-                  </div>
-                  <div class="p_courseTabContent_list_item">
-                    <dt><span class="p_courseTabContent_list_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></span>料金の目安</dt>
-                    <dd>月謝は学年・回数に応じてご案内<br>まずは無料体験でご相談ください</dd>
-                  </div>
-                  <div class="p_courseTabContent_list_item">
-                    <dt><span class="p_courseTabContent_list_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>特徴・メリット</dt>
-                    <dd>一人ひとりに合わせた個別カリキュラムで、正しい勉強法・テスト対策・学習習慣づくりをサポート。内申対策や受験準備にも対応。</dd>
-                  </div>
-                </dl>
+              <span class="p_courseCard_target">対象学年｜中学1〜3年生</span>
+              <h3 class="p_courseCard_title"><span>中学生</span>コース</h3>
+              <p class="p_courseCard_subtitle">高校受験に向けて、<br>今の一歩を確かな力に。</p>
+            </div>
+            <div class="p_courseCard_body">
+              <div class="p_courseCard_worries">
+                <h4 class="p_courseCard_worries_title">
+                  <span class="p_courseCard_worries_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6 2 1 6 1 11c0 3 2 6 5 7l-2 5 7-3c7 0 12-4 12-9S18 2 12 2Z"/><g fill="white"><circle cx="7" cy="11" r="1.2"/><circle cx="12" cy="11" r="1.2"/><circle cx="17" cy="11" r="1.2"/></g></svg>
+                  </span>
+                  こんなお悩みありませんか？
+                </h4>
+                <ul class="p_courseCard_worries_list">
+                  <li>学校の成績や<br>テストの点数が<br>下がりぎみ</li>
+                  <li>スマホばかりで、<br>勉強となかなか<br>向き合えない</li>
+                  <li>勉強のやり方が<br>分かっていないのでは、<br>と感じる</li>
+                </ul>
               </div>
-              <div class="e_button _line _lineBlack _center">
-                <a href="<?php echo esc_url( home_url( '/course/school' ) ); ?>">詳しく見る</a>
+              <div class="p_courseCard_solution">
+                <h4 class="p_courseCard_solution_title">
+                  <span class="p_courseCard_solution_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 17c0-3-3-3-3-8a7 7 0 0 1 14 0c0 5-3 5-3 8Z"/><path d="M8 20h8m-6 3h4M12 0v-2M3 3 1 1m20 2 2-2"/></svg>
+                  </span>
+                  個別指導専門塾ならこう変わる
+                </h4>
+                <ul class="p_courseCard_solution_list">
+                  <li>
+                    <span class="p_courseCard_solution_listIcon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </span>
+                    <p>学校の進度やテスト範囲に合わせた完全個別カリキュラム</p>
+                  </li>
+                  <li>
+                    <span class="p_courseCard_solution_listIcon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <p>行動科学マネジメント&#174;に基づき、正しい勉強のやり方を指導</p>
+                  </li>
+                  <li>
+                    <span class="p_courseCard_solution_listIcon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    </span>
+                    <p>家庭学習が習慣になるように毎日の学びをサポート</p>
+                  </li>
+                </ul>
+                <p class="p_courseCard_solution_desc">学校の進度やテスト範囲、お子様の理解度に合わせて個別に学習を設計。行動科学マネジメント&#174;の視点から正しい勉強のやり方を指導し、テスト対策だけでなく毎日の勉強の進め方までサポートします。</p>
               </div>
             </div>
-            <div class="p_courseTabContent js-tabContent _blue">
-              <div class="p_courseTabContent_image">
+            <div class="p_courseCard_footer">
+              <div class="e_button _pink _center">
+                <a href="<?php echo esc_url( home_url( '/course/school' ) ); ?>">詳しく見る &nbsp;&rsaquo;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 小学生コース -->
+          <div class="p_courseCard _blue">
+            <div class="p_courseCard_header">
+              <div class="p_courseCard_heroImage">
                 <picture>
                   <source srcset="<?php echo $imgUri; ?>/home/course_schoolchild.webp" type="image/webp">
-                  <img src="<?php echo $imgUri; ?>/home/course_schoolchild.jpg">
+                  <img src="<?php echo $imgUri; ?>/home/course_schoolchild.jpg" alt="小学生コース">
                 </picture>
               </div>
-              <div class="p_courseTabContent_text">
-                <h4>小学生コース</h4>
-                <dl class="p_courseTabContent_list">
-                  <div class="p_courseTabContent_list_item">
-                    <dt><span class="p_courseTabContent_list_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>対象者</dt>
-                    <dd>勉強習慣をつけたい小学生<br>基礎学力や理解力を伸ばしたいご家庭</dd>
-                  </div>
-                  <div class="p_courseTabContent_list_item">
-                    <dt><span class="p_courseTabContent_list_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></span>指導形態</dt>
-                    <dd>1対1・1対2の個別指導<br>対面中心・オンライン対応可</dd>
-                  </div>
-                  <div class="p_courseTabContent_list_item">
-                    <dt><span class="p_courseTabContent_list_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></span>料金の目安</dt>
-                    <dd>月謝は学年・回数に応じてご相談ください</dd>
-                  </div>
-                  <div class="p_courseTabContent_list_item">
-                    <dt><span class="p_courseTabContent_list_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>特徴・メリット</dt>
-                    <dd>勉強のやり方を知ることで学習習慣づくりを重視。つまずきやすい単元を丁寧に指導し、自発的に正しい学び方を身につけます。</dd>
-                  </div>
-                </dl>
+              <span class="p_courseCard_target">対象学年｜小学1〜6年生</span>
+              <h3 class="p_courseCard_title"><span>小学生</span>コース</h3>
+              <p class="p_courseCard_subtitle">「わかった！」「できた！」で<br>学ぶ楽しさを育てます。</p>
+            </div>
+            <div class="p_courseCard_body">
+              <div class="p_courseCard_worries">
+                <h4 class="p_courseCard_worries_title">
+                  <span class="p_courseCard_worries_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6 2 1 6 1 11c0 3 2 6 5 7l-2 5 7-3c7 0 12-4 12-9S18 2 12 2Z"/><g fill="white"><circle cx="7" cy="11" r="1.2"/><circle cx="12" cy="11" r="1.2"/><circle cx="17" cy="11" r="1.2"/></g></svg>
+                  </span>
+                  こんなお悩みありませんか？
+                </h4>
+                <ul class="p_courseCard_worries_list">
+                  <li>一人では勉強を<br>進めることが<br>できない</li>
+                  <li>苦手教科をそのまま<br>にしていて、<br>将来が心配</li>
+                  <li>勉強のやり方が<br>分かっていないのでは、<br>と感じる</li>
+                </ul>
               </div>
-              <div class="e_button _line _lineBlack _center">
-                <a href="<?php echo esc_url( home_url( '/course/schoolchild' ) ); ?>">詳しく見る</a>
+              <div class="p_courseCard_solution">
+                <h4 class="p_courseCard_solution_title">
+                  <span class="p_courseCard_solution_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 17c0-3-3-3-3-8a7 7 0 0 1 14 0c0 5-3 5-3 8Z"/><path d="M8 20h8m-6 3h4M12 0v-2M3 3 1 1m20 2 2-2"/></svg>
+                  </span>
+                  個別指導専門塾ならこう変わる
+                </h4>
+                <ul class="p_courseCard_solution_list">
+                  <li>
+                    <span class="p_courseCard_solution_listIcon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </span>
+                    <p>理解度に合わせて学習内容を一人ひとり設計</p>
+                  </li>
+                  <li>
+                    <span class="p_courseCard_solution_listIcon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <p>行動科学マネジメント&#174;に基づき、ノートの取り方から勉強のやり方を指導</p>
+                  </li>
+                  <li>
+                    <span class="p_courseCard_solution_listIcon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V12M12 15C3 16 2 9 3 5c7-1 10 4 9 10Zm0-2C11 6 16 3 22 4c0 7-4 10-10 9Z"/></svg>
+                    </span>
+                    <p>家庭学習の習慣化と自主性をしっかりサポート</p>
+                  </li>
+                </ul>
+                <p class="p_courseCard_solution_desc">一人ひとりの理解度に合わせて学習内容を組み立て、行動科学マネジメント&#174;の視点からノートの取り方など勉強のやり方そのものを指導。家庭学習の習慣化まで丁寧にサポートします。</p>
+              </div>
+            </div>
+            <div class="p_courseCard_footer">
+              <div class="e_button _blue _center">
+                <a href="<?php echo esc_url( home_url( '/course/schoolchild' ) ); ?>">詳しく見る &nbsp;&rsaquo;</a>
               </div>
             </div>
           </div>
-        </div>
-      <?php// get_template_part( 'parts/ctaBannar' ); ?>
-      </div>
-    </div>
-  <?php
-  $args = array(
-    'post_type' => 'voice', // 投稿タイプのスラッグを指定
-    'meta_key' => 'toppage_check', //カスタムフィールドのキー(フィールド名部分)
-    'meta_value' => 'true', //カスタムフィールドの値（「red : 赤」の「red」部分）
-    'meta_compare' => 'LIKE'
-  );
-  $voice_query = new WP_Query($args); if($voice_query->have_posts()):
-  ?>
-  <div class="p_voice">
-    <div class="l_xlCol2">
-      <div class="l_xlCol2_left">
-        <div class="e_heading-wrap mb2">
-          <h2 class="e_heading _large _pink">
-            <span class="e_heading_en">VOICE</span>
-            <span class="e_heading_jp">生徒・保護者からの喜びの声</span>
-          </h2>
-        </div>
-        <h3 class="e_heading_message _pink">これまでに<br>たくさんの生徒・保護者の方から<br>喜びの声をいただいています</h3>
-      </div>
-      <div class="l_xlCol2_right">
-        <div class="p_voiceSlider">
-          <div class="swiper js-voiceSlider">
-            <div class="swiper-wrapper">
-              <?php while ($voice_query->have_posts()): $voice_query->the_post(); ?>
-              <div class="swiper-slide">
-                <div class="c_voiceList_item">
-                  <div class="c_voiceList_header flex">
-                    <div class="c_voiceList_icon">
-                    <?php if (has_post_thumbnail()) : ?>
-                      <?php the_post_thumbnail(); ?>
-                    <?php else: ?>
-                      <img src="<?php echo $imgUri; ?>/common/voice_icon_noimage.png" alt="">
-                    <?php endif; ?>
-                    </div>
-                    <p class="c_voiceList_name"><?php the_field('student_name'); ?></p>
-                    <p class="c_voiceList_title"><?php the_title(); ?></p>
-                  </div>
-                  <div class="c_voiceList_text">
-                  <?php the_field('excerpt'); ?>
-                  </div>
-                </div>
-              </div>
-              <?php endwhile; ?>
-              <?php wp_reset_postdata(); ?>
-            </div>
-          </div>
-          <div class="p_voiceSlider_navigation">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </div><!-- /p_voiceSlider -->
-        <div class="e_button _pink _center">
-          <a href="<?php echo esc_url( home_url( '/voice' ) ); ?>">もっと見る</a>
-        </div>
-      </div>
-    </div>
-    <?php else: ?>
-    <?php endif; ?>
-  </div><!-- /p_voice -->
-      <div class="p_course_bottom" id="p_course_other">
-      <div class="l_inner">
-        <h3 class="e_heading_message _medium mb3">他にも特別なコースを<br>ご用意しております。</h3>
-        <?php if(have_rows('course_otherSmall')): ?>
-        <ul class="p_courseOtherSmallList grid">
-          <?php while(have_rows('course_otherSmall')): the_row(); ?>
-          <li class="p_courseOtherSmallList_item" style="background-image: url(<?php the_sub_field('image'); ?>)">
-            <a href="<?php the_sub_field('url'); ?>" target="_blank">
-              <p><?php the_sub_field('name'); ?></p>
-            </a>
-          </li>
-          <?php endwhile; ?>
-        </ul>
-        <?php endif; ?>
-        <?php if(have_rows('course_otherBig')): ?>
-        <ul class="p_courseOtherBigList grid">
-          <?php while(have_rows('course_otherBig')): the_row(); ?>
-          <li class="p_courseOtherBigList_item">
-            <a href="<?php the_sub_field('url'); ?>" target="_blank">
-              <img src="<?php the_sub_field('image'); ?>" alt="">
-            </a>
-          </li>
-          <?php endwhile; ?>
-        </ul>
-        <?php endif; ?>
+
+        </div><!-- /p_courseCards -->
       </div>
     </div>
   </div><!-- /p_course -->
@@ -393,28 +359,40 @@ Template Name: HOME(2026 Preview)
           <span class="e_heading_jp">教室紹介</span>
         </h2>
       </div>
-      <h3 class="e_heading_message _white mb3">勉強のやり方が身につく学習塾を愛知・岐阜に展開</h3>
-      <ul class="c_schoolBannerList mb3">
-      <?php
-        $args = array(
-          'orderby' => 'count',
-          'order' => 'desc',
-			'number' => 4
-        );
-        $terms = get_terms('area', $args);
-        foreach ( $terms as $term ):
-          $term_id = $term->term_id;
-          $term_image = get_field('category_image','category'.'_'.$term_id);
-      ?>
-        <li class="c_schoolBannerList_item" style="background-image: url(<?php echo $term_image; ?>);">
-          <a href="./area/<?php echo $term->slug; ?>/">
-            <p class="c_schoolBannerList_text"><?php echo $term->name; ?>でお探しの方</p>
-            <span class="c_schoolBannerList_number"><?php echo $term->count; ?></span>
-          </a>
-        </li>
-      <?php endforeach; ?>
-      </ul>
-      <div class="e_button _line _lineWhite _center">
+      <h3 class="e_heading_message _white mb3">愛知・岐阜を中心に展開中です</h3>
+
+      <div class="p_schoolMap">
+        <div class="p_schoolMap_left">
+          <p class="p_schoolMap_leadText">お近くの教室を地図からご確認いただけます。<br>地図上のピンをクリックすると、教室の詳細情報がご覧いただけます。</p>
+          <ul class="p_schoolMap_areaList">
+          <?php
+            $area_args = array(
+              'orderby' => 'count',
+              'order' => 'desc',
+              'number' => 4,
+            );
+            $area_terms = get_terms('area', $area_args);
+            foreach ( $area_terms as $term ):
+          ?>
+            <li class="p_schoolMap_areaList_item" data-area="<?php echo esc_attr( $term->slug ); ?>">
+              <button type="button" class="p_schoolMap_areaList_link" data-area="<?php echo esc_attr( $term->slug ); ?>">
+                <span class="p_schoolMap_areaList_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="p_schoolMap_areaList_body">
+                  <span class="p_schoolMap_areaList_name"><?php echo esc_html( $term->name ); ?>エリア</span>
+                </span>
+                <span class="p_schoolMap_areaList_number"><?php echo esc_html( $term->count ); ?><small>校舎</small></span>
+              </button>
+            </li>
+          <?php endforeach; ?>
+          </ul>
+        </div>
+
+        <div class="p_schoolMap_right">
+          <div id="js-schoolMapCanvas" class="p_schoolMap_canvas"></div>
+        </div>
+      </div>
+
+      <div class="e_button _line _lineWhite _center p_schoolMap_cta">
         <a href="<?php echo esc_url( home_url( '/school' ) ); ?>">校舎一覧を見る</a>
       </div>
     </div>

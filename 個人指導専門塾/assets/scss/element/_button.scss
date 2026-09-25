@@ -94,6 +94,12 @@
       color: g.$colorWhite;
     }
   }
+  &._blue{
+    a,span{
+      background-color: #54BED6;
+      color: g.$colorWhite;
+    }
+  }
   &._wide{
     a,span{
       width: 100%;
