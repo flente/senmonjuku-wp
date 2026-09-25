@@ -1308,6 +1308,24 @@
   content: none;
 }
 
+@media (max-width: 760px) {
+  .p_courseCard_worries_list,
+  .p_courseCard_solution_list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .p_courseCard_worries_list li {
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+    white-space: nowrap;
+  }
+  .p_courseCard_worries_list br {
+    display: none;
+  }
+  .p_courseCard_solution_list li {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
 .p_voice {
   padding-top: 6rem;
   padding-bottom: 6rem;

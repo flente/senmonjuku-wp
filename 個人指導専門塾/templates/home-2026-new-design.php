@@ -1,9 +1,9 @@
 <?php get_header();
 /*
-Template Name: HOME(2026 Preview)
+Template Name: 2026年新デザイン
 */
-// 【確認用ドラフト】docs/top-page-renewal-spec.md の内容を反映した非公開プレビュー用テンプレート。
-// お客様承認後、この内容を templates/home.php に反映し、本ファイルは削除する。
+// 2026年新デザインの確認用テンプレート。
+// 本番の HOME テンプレートとは別に管理する。
 ?>
 <?php if ( post_password_required() ) : ?>
   <div class="l_wrapper">

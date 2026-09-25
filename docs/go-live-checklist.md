@@ -20,9 +20,9 @@
 
 ## 1. TOPページ（MESSAGE / COURSE）
 
-- [ ] `templates/home-draft.php` の中身（MESSAGE・COURSEの変更点）を `templates/home.php` に統合する
-- [ ] `templates/home-draft.php` を削除する
-- [ ] `functions.php` の以下2箇所から `|| is_page_template('templates/home-draft.php')` を削除する
+- [ ] `templates/home-2026-new-design.php` の中身（MESSAGE・COURSEの変更点）を `templates/home.php` に統合する
+- [ ] `templates/home-2026-new-design.php` を削除する
+- [ ] `functions.php` の以下2箇所から `|| is_page_template('templates/home-2026-new-design.php')` を削除する
   - CSS読み込み条件（`home_style`）
   - JS読み込み条件（`home`, `swiper`, `swiper-works`）
 - [ ] `_message.scss` / `_course.scss` にある `._renewal` 修飾クラスのスコープを外し、通常のスタイルとして統合する（`&._renewal &_text` のような分岐をやめて、値を直接書く）
@@ -89,4 +89,4 @@
 └─ assets/scss/page/contact/index.css, index.min.css, _contact.scss
 ```
 
-（`templates/home-draft.php` / `templates/contact-draft.php` はこの時点で削除済みのはず）
+（`templates/home-2026-new-design.php` / `templates/contact-draft.php` はこの時点で削除済みのはず）
