@@ -1,0 +1,11 @@
+@use "../global" as g;
+@use "./home/school";
+
+.p_schoolMapArchive {
+    padding: 2rem;
+    border-radius: 1.4rem;
+    background-color: g.$colorMain;
+    @include g.mq(lg) {
+        padding: 3rem;
+    }
+}

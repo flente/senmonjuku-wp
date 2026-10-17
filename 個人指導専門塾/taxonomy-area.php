@@ -4,6 +4,9 @@
 <div class="l_wrapper">
 	<div class="c_archive">
 		<div class="l_inner">
+			<div class="p_schoolMapArchive mb3">
+				<?php get_template_part('parts/school-map'); ?>
+			</div>
 			<div class="c_archive_search mb2">
 			<?php
 				$taxonomy_slug = 'area'; // タクソノミーのスラッグを指定

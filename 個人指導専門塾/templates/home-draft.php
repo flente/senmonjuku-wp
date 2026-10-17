@@ -361,36 +361,7 @@ Template Name: HOME(2026 Preview)
       </div>
       <h3 class="e_heading_message _white mb3">愛知・岐阜を中心に展開中です</h3>
 
-      <div class="p_schoolMap">
-        <div class="p_schoolMap_left">
-          <p class="p_schoolMap_leadText">お近くの教室を地図からご確認いただけます。<br>地図上のピンをクリックすると、教室の詳細情報がご覧いただけます。</p>
-          <ul class="p_schoolMap_areaList">
-          <?php
-            $area_args = array(
-              'orderby' => 'count',
-              'order' => 'desc',
-              'number' => 4,
-            );
-            $area_terms = get_terms('area', $area_args);
-            foreach ( $area_terms as $term ):
-          ?>
-            <li class="p_schoolMap_areaList_item" data-area="<?php echo esc_attr( $term->slug ); ?>">
-              <button type="button" class="p_schoolMap_areaList_link" data-area="<?php echo esc_attr( $term->slug ); ?>">
-                <span class="p_schoolMap_areaList_icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-                <span class="p_schoolMap_areaList_body">
-                  <span class="p_schoolMap_areaList_name"><?php echo esc_html( $term->name ); ?>エリア</span>
-                </span>
-                <span class="p_schoolMap_areaList_number"><?php echo esc_html( $term->count ); ?><small>校舎</small></span>
-              </button>
-            </li>
-          <?php endforeach; ?>
-          </ul>
-        </div>
-
-        <div class="p_schoolMap_right">
-          <div id="js-schoolMapCanvas" class="p_schoolMap_canvas"></div>
-        </div>
-      </div>
+      <?php get_template_part('parts/school-map'); ?>
 
       <div class="e_button _line _lineWhite _center p_schoolMap_cta">
         <a href="<?php echo esc_url( home_url( '/school' ) ); ?>">校舎一覧を見る</a>

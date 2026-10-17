@@ -145,7 +145,7 @@
             }
         }
     }
-    // 【確認用】URLパラメータで出し分けする「担当講師紹介」「教室内の様子」セクション
+    // 担当講師紹介・教室内の様子
     &_teacherList{
         display: grid;
         grid-template-columns: repeat(2, 1fr);

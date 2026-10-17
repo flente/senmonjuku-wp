@@ -94,16 +94,45 @@
       markersByArea[s.area].push(marker);
     });
 
+    // 一覧では地図内のピンだけを切り替える。URLと下の教室一覧は変更しない。
+    function filterMapMarkers(area) {
+      if (!(window.schoolMapData && window.schoolMapData.filterMarkers)) return;
+      Object.keys(markersByArea).forEach(function(key){
+        markersByArea[key].forEach(function(marker){
+          if (!area || key === area) {
+            if (!map.hasLayer(marker)) marker.addTo(map);
+          } else {
+            map.removeLayer(marker);
+          }
+        });
+      });
+    }
+
+    // エリア別URLの初期表示は、そのエリアに合わせる。
+    var initialArea = window.schoolMapData && window.schoolMapData.initialArea;
+    if (initialArea) {
+      filterMapMarkers(initialArea);
+      var areaSchools = schools.filter(function(s){ return s.area === initialArea; }).map(function(s){ return [s.lat, s.lng]; });
+      if (areaSchools.length) {
+        map.fitBounds(L.latLngBounds(areaSchools).pad(0.3), { maxZoom: 14 });
+      } else if (AREA_FALLBACK_VIEW[initialArea]) {
+        map.setView(AREA_FALLBACK_VIEW[initialArea].center, AREA_FALLBACK_VIEW[initialArea].zoom);
+      }
+    }
+
     // エリアリストのボタン：ページ遷移せず、地図上でそのエリアへ移動する
     // 実データがあればそのエリアの校舎群にfitBounds、まだ無ければ暫定位置にフォールバック
-    var areaButtons = document.querySelectorAll('.p_schoolMap_areaList_link');
+    var areaButtons = document.querySelectorAll('button.p_schoolMap_areaList_link');
     areaButtons.forEach(function(btn){
       btn.addEventListener('click', function(){
         var area = btn.dataset.area;
-        areaButtons.forEach(function(b){ b.classList.remove('is-active'); });
+        areaButtons.forEach(function(b){ b.classList.remove('is-active'); b.setAttribute('aria-pressed', 'false'); });
         btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+        map.closePopup();
+        filterMapMarkers(area);
 
-        var markers = markersByArea[area];
+        var markers = area ? markersByArea[area] : Object.keys(markersByArea).reduce(function(all, key){ return all.concat(markersByArea[key]); }, []);
         if (markers && markers.length) {
           var group = L.featureGroup(markers);
           map.flyToBounds(group.getBounds().pad(0.3), { maxZoom: 14 });

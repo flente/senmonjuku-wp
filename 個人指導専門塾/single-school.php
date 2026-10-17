@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 <?php
   $imgUri = get_theme_file_uri() . "/assets/image/";
-  // 【確認用】URLに ?school_preview=0c82b980 が付いている時だけ、担当講師紹介・教室内の様子セクションを表示する。
-  // お客様承認後、この分岐を外して常時表示にする。
-  $is_school_preview = isset($_GET['school_preview']) && $_GET['school_preview'] === '0c82b980';
 ?>
 <div class="l_wrapper">
     <div class="c_single">
@@ -61,7 +58,6 @@
                             </dl>
                         </div>
                     </div>
-                    <?php if ($is_school_preview): ?>
                     <?php
                         $current_school_id = get_the_ID();
                         $teacher_args = array(
@@ -206,7 +202,6 @@
                       });
                     });
                     </script>
-                    <?php endif; ?>
                     <?php if(have_rows('access')): ?>
                     <div class="p_school_accsess mb5">
                         <div class="e_heading-wrap mb2">

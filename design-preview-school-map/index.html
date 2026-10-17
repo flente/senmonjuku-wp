@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>教室一覧・エリア絞り込み テスト画面</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="../個人指導専門塾/assets/scss/page/school-map.css">
+<style>
+*{box-sizing:border-box}html{font-size:62.5%}body{margin:0;color:#333;font:1.6rem/1.7 sans-serif;background:#faf8f6}a{color:inherit;text-decoration:none}button{cursor:pointer}header{background:white;padding:2rem max(2rem,calc((100% - 116rem)/2));border-bottom:1px solid #eee}header strong{color:#d5546a;font-size:2.2rem}.note{padding:1rem 2rem;background:#fff2d6;font-size:1.3rem}main{max-width:120rem;margin:4rem auto;padding:0 2rem}h1{font-size:3rem;margin:0 0 .5rem}.path{font-size:1.3rem;color:#777;margin-bottom:2rem}.p_schoolMapArchive{margin:2rem 0 4rem}.p_schoolMap_areaList{list-style:none;margin:0;padding:0}.p_schoolMap_areaList_link.is-active{box-shadow:inset 0 0 0 3px #77394b}.list-header{display:flex;justify-content:space-between;align-items:center;gap:2rem}select{font:inherit;padding:1rem;border:1px solid #ddd;border-radius:.5rem}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:2rem 0 5rem}.card{background:#fff;border:1px solid #eee;border-radius:1rem;overflow:hidden}.card img{width:100%;height:18rem;object-fit:cover}.card div{padding:2rem}.card small{color:#d5546a}.card h3{margin:.5rem 0;font-size:2rem}.card p{font-size:1.3rem}.card a{display:block;text-align:center;border:1px solid #d5546a;color:#d5546a;padding:.7rem;border-radius:.5rem}.p_schoolMap_card_name{margin:1rem 0}.p_schoolMap_card_image img{width:100%}footer{text-align:center;padding:3rem;background:#fff;font-size:1.3rem}@media(max-width:700px){main{margin-top:2rem}.cards{grid-template-columns:1fr}.list-header{align-items:start;flex-direction:column}h1{font-size:2.5rem}}
+</style>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+<div class="note">デザイン・動作確認用 ／ 教室名・住所・位置・件数はサンプルです。地図の読み込みにはインターネット接続が必要です。</div>
+<header><strong>個人指導専門塾</strong></header>
+<main><h1 id="heading">教室紹介</h1><div class="path" id="path"></div>
+<div class="p_schoolMapArchive"><div class="p_schoolMap"><div class="p_schoolMap_left">
+<p class="p_schoolMap_leadText">お近くの教室を地図からご確認いただけます。<br>地図上のピンをクリックすると、教室の詳細情報がご覧いただけます。</p>
+<ul class="p_schoolMap_areaList" id="areas"></ul></div>
+<div class="p_schoolMap_right"><div id="js-schoolMapCanvas" class="p_schoolMap_canvas"></div></div></div></div>
+<div class="list-header"><h2 id="list-heading">教室一覧</h2><select id="filter" aria-label="エリアで絞り込む"></select></div>
+<div class="cards" id="cards"></div>
+</main><footer>教室一覧 エリア絞り込みプレビュー</footer>
+<script>
+const areas=[['nagoya','名古屋','#D5546A',35.17,136.91],['owari','尾張','#E08A3C',35.30,136.85],['mikawa','三河','#4CAF7D',34.96,137.16],['gifu','岐阜','#5486D5',35.42,136.76]];
+const requested=new URLSearchParams(location.search).get('area')||'';
+const current=areas.some(a=>a[0]===requested)?requested:'';
+const image='../個人指導専門塾/assets/image/home/xl_school_image.jpg';
+const samples=areas.flatMap(a=>[0,1].map((n)=>({id:a[0]+n,name:a[1]+'サンプル教室'+(n+1),area:a[0],areaName:a[1]+'エリア',color:a[2],lat:a[3]+n*.028,lng:a[4]+n*.022,address:a[1]+'エリア（サンプル住所）',image,url:'#sample-'+a[0]+n})));
+const schools=current?samples.filter(s=>s.area===current):samples;
+window.schoolMapData={schools:samples,initialArea:current,filterMarkers:true};
+const label=current?areas.find(a=>a[0]===current)[1]+'エリア':'すべてのエリア';
+document.getElementById('heading').textContent=current?label+'の教室紹介':'教室紹介';
+document.getElementById('path').textContent='表示イメージ：/school/'+(current?current+'/':'');
+document.getElementById('list-heading').textContent=label+'の教室一覧（'+schools.length+'校）';
+const choices=[['','すべてのエリア'],...areas.map(a=>[a[0],a[1]+'エリア'])];
+document.getElementById('areas').innerHTML=choices.map(([slug,name])=>'<li class="p_schoolMap_areaList_item" data-area="'+slug+'"><button type="button" data-area="'+slug+'" class="p_schoolMap_areaList_link'+(slug===current?' is-active':'')+'"'+(slug===current?' aria-pressed="true"':'')+'><span class="p_schoolMap_areaList_body"><span class="p_schoolMap_areaList_name">'+name+'</span></span><span class="p_schoolMap_areaList_number">'+(slug?2:8)+'<small>校舎</small></span></button></li>').join('');
+document.getElementById('filter').innerHTML=choices.map(([slug,name])=>'<option value="'+slug+'"'+(slug===current?' selected':'')+'>'+name+'</option>').join('');
+document.getElementById('filter').addEventListener('change',e=>location.search='?area='+e.target.value);
+document.getElementById('cards').innerHTML=schools.map(s=>'<article class="card" id="sample-'+s.id+'"><img src="'+s.image+'" alt="教室イメージ"><div><small>'+s.areaName+'</small><h3>'+s.name+'</h3><p>'+s.address+'</p><a href="#sample-'+s.id+'">教室詳細を見る（サンプル）</a></div></article>').join('');
+</script>
+<script src="../個人指導専門塾/assets/js/schoolMap.js"></script>
+</body></html>

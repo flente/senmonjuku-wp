@@ -19,6 +19,11 @@ function add_styles() {
 	wp_enqueue_style('reset_style', $css_directory.'style.css', "", $css_version);
 	if (is_front_page() || is_page_template('templates/home-draft.php')) {
 		wp_enqueue_style('home_style', $css_page_directory. 'home/' . 'index.css', "", $css_version);
+	}
+	if (is_post_type_archive('school') || is_tax('area')) {
+		wp_enqueue_style('school_map_style', $css_page_directory . 'school-map.css', array(), filemtime(get_template_directory() . '/assets/scss/page/school-map.css'));
+	}
+	if (is_front_page() || is_page_template('templates/home-draft.php') || is_post_type_archive('school') || is_tax('area')) {
 		// SCHOOL地図化：Leaflet（無料・APIキー不要）
 		wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', "", "1.9.4" );
 	}
@@ -61,9 +66,11 @@ function add_scripts() {
 		wp_enqueue_script( 'home', $js_directory.'home.js', "", $js_version, true);
 		wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', true);
 		wp_enqueue_script( 'swiper-works', $js_directory.'swiper-works.js', "", $js_version, true);
+	}
+	if (is_front_page() || is_page_template('templates/home-draft.php') || is_post_type_archive('school') || is_tax('area')) {
 		// SCHOOL地図化：Leaflet本体＋初期化スクリプト
 		wp_enqueue_script( 'leaflet', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', "", "1.9.4", true );
-		wp_enqueue_script( 'school-map', $js_directory.'schoolMap.js', array('leaflet'), $js_version, true );
+		wp_enqueue_script( 'school-map', $js_directory.'schoolMap.js', array('leaflet'), filemtime(get_template_directory() . '/assets/js/schoolMap.js'), true );
 		wp_localize_script( 'school-map', 'schoolMapData', senmonjuku_get_school_map_data() );
 	}
  }
@@ -78,12 +85,14 @@ function senmonjuku_get_school_map_data() {
 		'gifu'   => '#5486D5',
 	);
 
-	$query = new WP_Query(array(
+	$initial_area = is_tax('area') ? get_queried_object()->slug : '';
+	$query_args = array(
 		'post_type'      => 'school',
 		'post_status'    => 'publish',
 		'posts_per_page' => -1,
 		'no_found_rows'  => true,
-	));
+	);
+	$query = new WP_Query($query_args);
 
 	$schools = array();
 	while ( $query->have_posts() ) {
@@ -114,7 +123,7 @@ function senmonjuku_get_school_map_data() {
 	}
 	wp_reset_postdata();
 
-	return array( 'schools' => $schools );
+	return array( 'schools' => $schools, 'initialArea' => $initial_area, 'filterMarkers' => is_post_type_archive('school') || is_tax('area') );
 }
 
 
